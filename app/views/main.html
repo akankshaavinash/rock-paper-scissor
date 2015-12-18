@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-md-4 col-md-offset-4 scores">
+      <div class="row">
+        <p>
+          1 round is of 5 tries.
+        </p>
+      </div>
+      <div class="row">
+        <h5>Score Card</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-4 ply1Scr">
+          <div class="col-md-12 heading">
+            Player 1
+          </div>
+          <div class="col-md-12 scoreTxt">
+            <p>{{player1Score}}</p>
+          </div>
+          
+        </div>
+        <div class="col-md-4 ply2Scr">
+          <div class="col-md-12 heading">
+            Player 2
+          </div>
+          <div class="col-md-12 scoreTxt">
+            <p>{{player2Score}}</p>
+          </div>
+        </div>
+        <div class="col-md-4 tie">
+          <div class="col-md-12 heading">
+            Ties
+          </div>
+          <div class="col-md-12 scoreTxt">
+            <p>{{tie}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ 
+  <div class="row gameContainer">
+    <div class="col-md-4 player">
+      <div class="row">
+        <div class="col-md-4 paper">
+          <a ng-click = "btnClickedPly1('paper', 'selectedByPlayer1')" ng-class="{disabled: disabledPly1}"><i class="fa fa-hand-paper-o"></i></a>
+        </div>
+        <div class="col-md-4 scissor">
+          <a ng-click = "btnClickedPly1('scissors', 'selectedByPlayer1')" ng-class="{disabled: disabledPly1}"><i class="fa fa-scissors"></i></a>
+        </div>
+        <div class="col-md-4 rock">
+          <a ng-click = "btnClickedPly1('rock', 'selectedByPlayer1')" ng-class="{disabled: disabledPly1}"><i class="fa fa-hand-rock-o"></i></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 selectedByPlayer1 text-center">
+        </div>
+      </div>
+    </div>
+     <div class="col-md-4 player">
+        <div class="row">
+          <div class="col-md-4 paper">
+            <a ng-click = "btnClickedPly2('paper', 'selectedByPlayer2')" ng-class="{disabled: disabledPly2}"><i class="fa fa-hand-paper-o"></i></a>
+          </div>
+          <div class="col-md-4 scissor">
+            <a ng-click = "btnClickedPly2('scissors', 'selectedByPlayer2')" ng-class="{disabled: disabledPly2}"><i class="fa fa-scissors"></i></a>
+          </div>
+          <div class="col-md-4 rock">
+            <a ng-click = "btnClickedPly2('rock', 'selectedByPlayer2')" ng-class="{disabled: disabledPly2}"><i class="fa fa-hand-rock-o"></i></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 selectedByPlayer2 text-center">
+             <!-- <i class="fa" ng-class="{{player2Selection}}"></i> -->
+          </div>
+        </div>
+     </div>
+  </div>
+</div>
