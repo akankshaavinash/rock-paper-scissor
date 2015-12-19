@@ -14,6 +14,7 @@ angular.module('paperScissorRockApp')
       'AngularJS',
       'Karma'
     ];
+    
     $scope.player1Selection = "";
     $scope.player2Selection = "";
     $scope.tie = 0;
@@ -26,12 +27,16 @@ angular.module('paperScissorRockApp')
 
     var counter = 0;
 
+    // Player 1 click
     $scope.btnClickedPly1 = function(btnType, player){
     	$scope.getIcon(btnType, player);
     	$scope.player1Selection = btnType;
     	$scope.disabledPly1 = true;
     	$scope.disabledPly2 = false;
     };
+
+    // Player 2 click. Considering that player 2 always goes after player 1, score calculation is done only when 
+    // player 2 make his selections.
     $scope.btnClickedPly2 = function(btnType, player){
     	$scope.getIcon(btnType, player);
     	$scope.player2Selection = btnType;
@@ -55,10 +60,10 @@ angular.module('paperScissorRockApp')
     		$scope.tie = 0;
     		$scope.player1Score = 0;
     		$scope.player2Score = 0;
-
     	}
     };
 
+    // Changes the icon on the clcik of icon btn
     $scope.getIcon = function(btnType, player){
     	console.log(player);
     	var className = "."+player;
@@ -74,6 +79,8 @@ angular.module('paperScissorRockApp')
     		$(className).append('<i class="fa fa-hand-rock-o"></i>');
     	}
     }
+
+    // Calculates scores.
     $scope.getScore = function(player1Selection, player2Selection){
 
     	if (player1Selection === player2Selection) {
